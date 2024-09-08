@@ -78,7 +78,9 @@ local GetSword = Tabs.Player:AddButton({
     Title = "Get Sword",
     Description = "Add Sword to your Backpack",
     Callback = function()
-       game.ReplicatedStorage.Assets.Weapons.Sword.Parent = game.Players.LocalPlayer.Backpack
+       local SwordW = game.ReplicatedStorage.Assets.Weapons.Sword:Clone() 
+
+SwordW = game.Players.LocalPlayer.Backpack
     end
 })
 
@@ -86,7 +88,9 @@ local GetSpear = Tabs.Player:AddButton({
     Title = "Get Spear",
     Description = "Add Spear to your Backpack",
     Callback = function()
-       game.ReplicatedStorage.Assets.Weapons.Spear.Parent = game.Players.LocalPlayer.Backpack
+       local SpearW = game.ReplicatedStorage.Assets.Weapons.Spear:Clone() 
+
+SpearW = game.Players.LocalPlayer.Backpack
     end
 })
 
@@ -94,7 +98,9 @@ local GetCrossbow = Tabs.Player:AddButton({
     Title = "Get Crossbow",
     Description = "Add Crossbow to your Backpack",
     Callback = function()
-       game.ReplicatedStorage.Assets.Weapons.Crossbow.Parent = game.Players.LocalPlayer.Backpack
+       local CrossbowW = game.ReplicatedStorage.Assets.Weapons.Crossbow:Clone() 
+
+CrossbowW = game.Players.LocalPlayer.Backpack
     end
 })
 
@@ -102,7 +108,9 @@ local GetFlamethrower = Tabs.Player:AddButton({
     Title = "Get Flamethrower",
     Description = "Add Flamethrower to your Backpack",
     Callback = function()
-       game.ReplicatedStorage.Assets.Weapons.Flamethrower.Parent = game.Players.LocalPlayer.Backpack
+       local FlamethrowerW = game.ReplicatedStorage.Assets.Weapons.Flamethrower:Clone() 
+
+FlamethrowerW = game.Players.LocalPlayer.Backpack
     end
 })
 
@@ -110,7 +118,9 @@ local GetMace = Tabs.Player:AddButton({
     Title = "Get Mace",
     Description = "Add Mace to your Backpack",
     Callback = function()
-       game.ReplicatedStorage.Assets.Weapons.Mace.Parent = game.Players.LocalPlayer.Backpack
+       local MaceW = game.ReplicatedStorage.Assets.Weapons.Mace:Clone() 
+
+MaceW = game.Players.LocalPlayer.Backpack
     end
 })
 
@@ -118,7 +128,9 @@ local GetStaff = Tabs.Player:AddButton({
     Title = "Get Staff",
     Description = "Add Staff to your Backpack",
     Callback = function()
-       game.ReplicatedStorage.Assets.Weapons.Staff.Parent = game.Players.LocalPlayer.Backpack
+       local StaffW = game.ReplicatedStorage.Assets.Weapons.Staff:Clone() 
+
+StaffW = game.Players.LocalPlayer.Backpack
     end
 })
 
@@ -126,7 +138,9 @@ local GetRayGun = Tabs.Player:AddButton({
     Title = "Get RayGun",
     Description = "Add RayGun to your Backpack",
     Callback = function()
-       game.ReplicatedStorage.Assets.Weapons.RayGun.Parent = game.Players.LocalPlayer.Backpack
+       local RayGunW = game.ReplicatedStorage.Assets.Weapons.RayGun:Clone() 
+
+RayGunW = game.Players.LocalPlayer.Backpack
     end
 })
 
@@ -134,7 +148,9 @@ local GetRocketLauncher = Tabs.Player:AddButton({
     Title = "Get Rocket Launcher",
     Description = "Add Rocket Launcher to your Backpack",
     Callback = function()
-       game.ReplicatedStorage.Assets.Weapons.Rocket_Launcher.Parent = game.Players.LocalPlayer.Backpack
+       local RLW = game.ReplicatedStorage.Assets.Weapons.Rocket_Launcher:Clone() 
+
+RLW = game.Players.LocalPlayer.Backpack
     end
 })
 -- Esp Tab
