@@ -153,7 +153,7 @@ local GetRocketLauncher = Tabs.Player:AddButton({
 RLW = game.Players.LocalPlayer.Backpack
     end
 })
--- Esp Tab
+-- Esp Tab(Credit to .terni)
 local EspEn = Tabs.EspTab:AddToggle("Esp", {Title = "Enable Esp", Default = false })
 
 EspEn:OnChanged(function()
