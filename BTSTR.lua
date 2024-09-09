@@ -36,7 +36,7 @@ Tabs.Main:AddParagraph({
     })
 
 -- Player Tab
-local speed = 16  -- Default speed
+local speed = 16
 
 local NoCD = Tabs.Player:AddButton({
     Title = "No Cooldown",
@@ -158,13 +158,13 @@ local EspEn = Tabs.EspTab:AddToggle("Esp", {Title = "Enable Esp", Default = fals
 
 EspEn:OnChanged(function()
     if EspEn then
-        getgenv().enabled = EspEn.Value -- Toggle on/off
-        getgenv().filluseteamcolor = true -- Toggle fill color using player team color on/off
-        getgenv().outlineuseteamcolor = true -- Toggle outline color using player team color on/off
-        getgenv().fillcolor = Color3.new(0, 0, 0) -- Change fill color, no need to edit if using team color
-        getgenv().outlinecolor = Color3.new(1, 1, 1) -- Change outline color, no need to edit if using team color
-        getgenv().filltrans = 0.5 -- Change fill transparency
-        getgenv().outlinetrans = 0 -- Change outline transparency
+        getgenv().enabled = EspEn.Value
+        getgenv().filluseteamcolor = true
+        getgenv().outlineuseteamcolor = true
+        getgenv().fillcolor = Color3.new(0, 0, 0)
+        getgenv().outlinecolor = Color3.new(1, 1, 1)
+        getgenv().filltrans = 0.5
+        getgenv().outlinetrans = 0
 
         local holder = game.CoreGui:FindFirstChild("ESPHolder") or Instance.new("Folder")
 if not getgenv().enabled then
@@ -230,7 +230,6 @@ local InsExplode = Tabs.Robots:AddButton({
     Callback = function()
         local player = game.Players.LocalPlayer
 
--- Функция для создания кнопки
 local function createButton()
     local ScreenGui = Instance.new("ScreenGui")
     ScreenGui.Name = "ScreenGui"
@@ -249,7 +248,7 @@ local function createButton()
     Toggle.TextSize = 28.000
     Toggle.Draggable = false
 
-    -- Действие при нажатии на кнопку
+    
     Toggle.MouseButton1Click:Connect(function()
         game:GetService("ReplicatedStorage").Remotes.Robot.LightFuse:InvokeServer()
         wait(1)
@@ -261,22 +260,21 @@ local function createButton()
     Corner.Parent = Toggle
 end
 
--- Функция для удаления кнопки, если она существует
+
 local function removeButton()
     local screenGui = player:FindFirstChild("PlayerGui"):FindFirstChild("ScreenGui")
     if screenGui then
-        screenGui:Destroy() -- Удаляет GUI с кнопкой
+        screenGui:Destroy()
     end
 end
 
--- Проверка команды игрока
 if player.Team and player.Team.Name == "Robots" then
     createButton() -- Создаем кнопку
 elseif player.Team and player.Team.Name == "Humans" then
     removeButton() -- Удаляем кнопку, если она есть
 end
 
--- Дополнительно можно сделать так, чтобы проверка выполнялась при изменении команды игрока
+
 player:GetPropertyChangedSignal("Team"):Connect(function()
     if player.Team and player.Team.Name == "Robots" then
         createButton() -- Создаем кнопку
@@ -378,21 +376,21 @@ Fluent:Notify({
     Duration = 8
 })
 
--- Ensure WalkSpeed is updated correctly even after death
+-- Walkspeed
 local function onCharacterAdded(character)
     local humanoid = character:WaitForChild("Humanoid")
     humanoid.WalkSpeed = speed
 end
 
--- Connect CharacterAdded event to handle respawns
+
 player.CharacterAdded:Connect(onCharacterAdded)
 
--- Handle the current character if it exists
+
 if player.Character then
     onCharacterAdded(player.Character)
 end
 
--- Continuously update the WalkSpeed during gameplay
+
 game:GetService("RunService").RenderStepped:Connect(function()
     local character = player.Character
     if character and character:FindFirstChild("Humanoid") then
